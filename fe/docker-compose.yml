@@ -1,0 +1,17 @@
+version: "3.2"
+
+services:
+
+  frontend:
+    build: 
+      context: ./
+      dockerfile: .docker/Dev.Dockerfile
+    environment:
+      VITE_KEYCLOAK_URL: https://weoauth.com/
+      VITE_KEYCLOAK_REALM: master
+      VITE_KEYCLOAK_CLIENT: test-fe1
+    volumes:
+      - /app/node_modules
+      - ./src:/app/src
+    ports:
+      - 4000:4000

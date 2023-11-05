@@ -7,6 +7,12 @@ export default defineConfig({
     proxy: {
       "/documents": "http://127.0.0.1:5000/",
     },
+    watch: {
+      usePolling: true,
+    },
+    host: true, // needed for the Docker Container port mapping to work
+    strictPort: true,
+    port: 4000
   },
   plugins: [react()],
 });
