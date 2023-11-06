@@ -18,7 +18,7 @@ const Protected = ({ token }) => {
     };
 
     axios
-      .get("/documents", config)
+      .get("http://localhost:3000/users/me", config)
       .then((res) => setData(res.data))
       .catch((err) => console.error(err));
   }, []);
